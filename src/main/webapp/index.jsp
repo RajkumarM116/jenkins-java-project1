@@ -1,47 +1,41 @@
-// Version: 1.0.0
-
-import javax.swing.*;
-import java.awt.*;
-
-public class AnimatedLogin extends JFrame {
-    private int x = 0;
-    private int direction = 1;
-    private Image cartoonImage;
-
-    public AnimatedLogin() {
-        setSize(400, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        cartoonImage = new ImageIcon("path/to/your/image.png").getImage();
-    }
-
-    public void animate() {
-        JPanel content = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.drawString("Welcome to Amazon Prime", x, 100);
-                g.drawImage(cartoonImage, 50, 50, this);
-            }
-        };
-
-        getContentPane().add(content);
-
-        Timer timer = new Timer(10, e -> {
-            x += direction;
-            if (x > getWidth()) {
-                direction = -1;
-            } else if (x < 0) {
-                direction = 1;
-            }
-            content.repaint();
-        });
-        timer.start();
-    }
-
-    public static void main(String[] args) {
-        AnimatedLogin frame = new AnimatedLogin();
-        frame.setVisible(true);
-        frame.animate();
-    }
-}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login Page | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#"><img src="images/logo.svg" alt="logo"></a>
+    </nav>
+    <div class="form-wrapper">
+    <h2>NETFLIX SIGN IN V-6.0</h2>
+        <form action="#">
+            <div class="form-control">
+                <input type="text" required>
+                <label>Mobile number</label>
+            </div>
+            <div class="form-control">
+                <input type="password" required>
+                <label>SECRET</label>
+            </div>
+            <button type="submit">WELCOME TO NETFLIX V-5</button>
+            <div class="form-help"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#">Need help?</a>
+            </div>
+        </form>
+        <p>New to Netflix? <a href="#">Lets join up now</a></p>
+        <small>
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more.</a>
+        </small>
+    </div>
+</body>
+</html>
